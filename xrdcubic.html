@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>XRD peak indexing for cubic crystals</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h2>XRD peak indexing for cubic crystals</h2>
+        <form>
+            <span>&lambda; = </span> <input id="lambda" value="1.54056" />&nbsp;&angst;
+            <table id="tPeaks">
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>Peak position (2&theta;)</th>
+                    <th>&nbsp;</th>
+                </tr>
+            </table>
+            <input id="addBtn" type="button" value="add peak" class="xrd_add" />
+            <input id="indexPeaksBtn" type="button" value="Index peaks" class="xrd_index" />
+        </form>
+        <br/>
+        <div id="#results-div">
+            <strong>System:</strong> <span id="result-lattice-system">&nbsp;</span>
+            <stron>Lattice constant:</stron> <span id="result-lattice-constant">&nbsp;</span>
+            <table id="xrd-results-tbl">
+                <tr>
+                    <th>2&theta; (&deg;)</th>
+                    <th>Index</th>
+                    <th>distance (&angst;)</th>
+                    <th>d/d<sub>0</sub></th>
+                </tr>
+            </table>
+        </div>
+    </body>
+    <script src="./js/xrdcubic.js"></script>
+    <script>
+        $( document ).ready(function() {
+            addPeak();
+        });
+    </script>
+</html>
